@@ -12,8 +12,8 @@ import ProjectDescription
 // TODO: Workspace + ENV = APP1, APP2, APP3 Workspace
 
 let workspace = Workspace(
-    name: "Sample",
+    name: "Application",
     projects: [
-        "Projects/App"
+        "Projects/Apps/**"
     ]
 )

@@ -14,6 +14,12 @@ import ProjectDescription
 // 예시: 하나의 피쳐 구성 방식(minsone)은 피쳐를 크게 domain, repository, UI 로 분리해서 각각의 프로젝트를 생성합니다.
 // 각 피쳐 내부 프로젝트는 기본 구현된 도메인, 레포, UI를 의존하고, 피쳐의 세부사항을 구현하는 방식으로 개발방향을 정한 것 같습니다.
 
+// Feature: Repository -> Domain -> UI
+
+// FeatureKit (dynamic) -> Features/** (static)
+// CoreKit (dynamic) -> Cores/** (static)
+// UserInterfaceKit (dynamic) -> UserInterfaces/** (static)
+
 extension TargetDependency {
     public struct Project {
         public struct App {}
@@ -59,8 +65,8 @@ public extension TargetDependency.Project.Feature {
         )
     }
 
-    static let Fanz      = project(name: "Fanz")
-    static let AlbumList = project(name: "AlbumList")
+    static let Fanz      = project(name: "FeatureFanz")
+    static let AlbumList = project(name: "FeatureAlbumList")
 }
 
 // MARK: - Core
@@ -76,6 +82,7 @@ public extension TargetDependency.Project.Core {
     static let MuzProcessor         = project(name: "MuzProcessor")
     static let Audio                = project(name: "Audio")
     static let Authentication       = project(name: "Authentication")
+    static let Network              = project(name: "Network")
     static let ThirdPartyLibManager = project(name: "ThirdPartyLibManager")
 }
 
