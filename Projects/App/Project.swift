@@ -1,12 +1,13 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
+import UtilityPlugin
 
 let project = Project.makeModule(
     name: "KiTPlayer",
     platform: .iOS,
     product: .app,
     dependencies: [
-        .Project.Feature,
+        .Project.FeatureLogin,
         .Project.FeatureMultiAlbum,
         .Project.FeatureVideoAlbum
     ],
