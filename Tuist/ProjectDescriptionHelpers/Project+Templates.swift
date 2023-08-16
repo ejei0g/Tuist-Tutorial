@@ -52,7 +52,10 @@ public extension Project {
             deploymentTarget: deploymentTarget,
             infoPlist: .default,
             sources: ["Tests/**"],
-            dependencies: [.target(name: name)] // 테스트는 앱타켓을 의존함
+            dependencies: [
+                .target(name: name),
+                .xctest
+            ]
         )
 
         let schemes: [Scheme] = [.makeScheme(target: .debug, name: name)]
